@@ -1,0 +1,18 @@
+---
+
+- name: Create a firewall 
+  gcp_compute_firewall:
+    name: "{{item.name}}"
+    allowed:
+    - ip_protocol: "{{item.protocol}}"
+      ports: "{{item.port}}"
+    target_tags:
+    - "{{item.target_tags}}"
+    source_ranges:
+    - "{{item.source_ranges}}"
+    network: "{{ network.resources[0] }}"
+    project: "{{ vars.project.shared_projectID }}"
+    auth_kind: "{{ vars.project.authkind }}"
+    service_account_file: "{{ vars.project.serviceaccounts[0].local_json_fullpath }}"
+    state: "{{ vars.resources.state.firewall | default(vars.resources.state.default) }}"
+  with_items: "{{vars.resources.firewall}}"

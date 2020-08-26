@@ -1,0 +1,11 @@
+---
+
+- name: Get info on a subnetwork
+  gcp_compute_subnetwork_info:
+    region: "{{ vars.general.region_default }}"
+    filters:
+    - name = "{{ vars.resources.subnets[0].name }}"
+    project: "{{ vars.project.shared_projectID }}"
+    auth_kind: "{{ vars.project.authkind }}"
+    service_account_file: "{{ vars.project.serviceaccounts[0].local_json_fullpath }}"
+  register: subnetwork

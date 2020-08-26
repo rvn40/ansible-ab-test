@@ -1,0 +1,1066 @@
+ansible-playbook 2.9.12
+  config file = /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/ansible.cfg
+  configured module search path = [u'/home/rivan_amarbank/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Apr  2 2020, 13:16:51) [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+Using /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/ansible.cfg as config file
+setting up inventory plugins
+host_list declined parsing /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/hosts as it did not pass its verify_file() method
+script declined parsing /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/hosts as it did not pass its verify_file() method
+auto declined parsing /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/hosts as it did not pass its verify_file() method
+Set default localhost to localhost
+Parsed /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/hosts inventory source with ini plugin
+Read vars_file 'vars/gcp.yml'
+statically imported: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/decrypt.yml
+Read vars_file 'vars/gcp.yml'
+statically imported: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/network.yml
+Read vars_file 'vars/gcp.yml'
+statically imported: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/subnetwork.yml
+Read vars_file 'vars/gcp.yml'
+statically imported: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/firewall.yml
+Read vars_file 'vars/gcp.yml'
+statically imported: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/vms.yml
+Read vars_file 'vars/gcp.yml'
+statically imported: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/encrypt.yml
+Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/default.pyc
+
+PLAYBOOK: vm.yml *************************************************************************************************************************************************************
+Positional arguments: vm.yml
+become_method: sudo
+inventory: (u'/home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/hosts',)
+forks: 5
+tags: (u'all',)
+verbosity: 4
+connection: smart
+timeout: 10
+1 plays in vm.yml
+Read vars_file 'vars/gcp.yml'
+Read vars_file 'vars/gcp.yml'
+Read vars_file 'vars/gcp.yml'
+
+PLAY [local] *****************************************************************************************************************************************************************
+Read vars_file 'vars/gcp.yml'
+
+TASK [Gathering Facts] *******************************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/vm.yml:3
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: rivan_amarbank
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378381.58-24468-125412080084916 `" && echo ansible-tmp-1598378381.58-24468-125412080084916="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378381.58-24468-125412080084916 `" ) && sleep 0'
+<localhost> Attempting python interpreter discovery
+<localhost> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'/usr/bin/python'"'"'; command -v '"'"'python3.7'"'"'; command -v '"'"'python3.6'"'"'; command -v '"'"'python3.5'"'"'; command -v '"'"'python2.7'"'"'; command -v '"'"'python2.6'"'"'; command -v '"'"'/usr/libexec/platform-python'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'python'"'"'; echo ENDFOUND && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmp1kgo4T TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378381.58-24468-125412080084916/AnsiballZ_setup.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378381.58-24468-125412080084916/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378381.58-24468-125412080084916/AnsiballZ_setup.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-jiflmgmbbwesqapxzeixefbcjuruwxvs ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378381.58-24468-125412080084916/AnsiballZ_setup.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378381.58-24468-125412080084916/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+META: ran handlers
+Read vars_file 'vars/gcp.yml'
+
+TASK [Checking ssh files] ****************************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/decrypt.yml:4
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: rivan_amarbank
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378382.72-24523-51310221647656 `" && echo ansible-tmp-1598378382.72-24523-51310221647656="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378382.72-24523-51310221647656 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmpr4O2my TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378382.72-24523-51310221647656/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378382.72-24523-51310221647656/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378382.72-24523-51310221647656/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-ifmsegfemawkjpkfkzrgflfwjrfyvhlv ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378382.72-24523-51310221647656/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378382.72-24523-51310221647656/ > /dev/null 2>&1 && sleep 0'
+fatal: [localhost]: FAILED! => {
+    "changed": true, 
+    "cmd": "cat \"inventory/ssh_keys/ssh_login.pem\" | grep \\$ANSIBLE_VAULT;", 
+    "delta": "0:00:00.008233", 
+    "end": "2020-08-25 17:59:43.043484", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "cat \"inventory/ssh_keys/ssh_login.pem\" | grep \\$ANSIBLE_VAULT;", 
+            "_uses_shell": true, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "msg": "non-zero return code", 
+    "rc": 1, 
+    "start": "2020-08-25 17:59:43.035251", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "", 
+    "stdout_lines": []
+}
+...ignoring
+Read vars_file 'vars/gcp.yml'
+
+TASK [Checking serviceaccounts files] ****************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/decrypt.yml:9
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: rivan_amarbank
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.33-24549-78251942583089 `" && echo ansible-tmp-1598378383.33-24549-78251942583089="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.33-24549-78251942583089 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmpyxyEDJ TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.33-24549-78251942583089/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.33-24549-78251942583089/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.33-24549-78251942583089/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-ocglifnyekuxlrzeseuioxxjotnnbqrk ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.33-24549-78251942583089/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.33-24549-78251942583089/ > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+failed: [localhost] (item={u'remote_account_fullname': u'amarbanksharedplatform-ansible@amarbank-shared-platform.iam.gserviceaccount.com', u'local_json_directory': u'inventory/serviceaccounts/', u'remote_account_name': u'amarbanksharedplatform-ansible', u'local_json_fullpath': u'inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json', u'local_json_name': u'amarbank-shared-platform-4c0898062f0c.json'}) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": "cat \"inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json\" | grep \\$ANSIBLE_VAULT;", 
+    "delta": "0:00:00.008443", 
+    "end": "2020-08-25 17:59:43.479172", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "cat \"inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json\" | grep \\$ANSIBLE_VAULT;", 
+            "_uses_shell": true, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": {
+        "local_json_directory": "inventory/serviceaccounts/", 
+        "local_json_fullpath": "inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json", 
+        "local_json_name": "amarbank-shared-platform-4c0898062f0c.json", 
+        "remote_account_fullname": "amarbanksharedplatform-ansible@amarbank-shared-platform.iam.gserviceaccount.com", 
+        "remote_account_name": "amarbanksharedplatform-ansible"
+    }, 
+    "msg": "non-zero return code", 
+    "rc": 1, 
+    "start": "2020-08-25 17:59:43.470729", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "", 
+    "stdout_lines": []
+}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.52-24549-85550600075238 `" && echo ansible-tmp-1598378383.52-24549-85550600075238="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.52-24549-85550600075238 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmpDrX0Bj TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.52-24549-85550600075238/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.52-24549-85550600075238/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.52-24549-85550600075238/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-jtfsilhustmlwbwcoqqbgibrsgjajaep ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.52-24549-85550600075238/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378383.52-24549-85550600075238/ > /dev/null 2>&1 && sleep 0'
+failed: [localhost] (item={u'remote_account_fullname': u'amarbanksre-ansible@amarbank-sre.iam.gserviceaccount.com', u'local_json_directory': u'inventory/serviceaccounts/', u'remote_account_name': u'amarbanksre-ansible', u'local_json_fullpath': u'inventory/serviceaccounts/amarbank-sre-f522711415b2.json', u'local_json_name': u'amarbank-sre-f522711415b2.json'}) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": "cat \"inventory/serviceaccounts/amarbank-sre-f522711415b2.json\" | grep \\$ANSIBLE_VAULT;", 
+    "delta": "0:00:00.008342", 
+    "end": "2020-08-25 17:59:43.674635", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "cat \"inventory/serviceaccounts/amarbank-sre-f522711415b2.json\" | grep \\$ANSIBLE_VAULT;", 
+            "_uses_shell": true, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": {
+        "local_json_directory": "inventory/serviceaccounts/", 
+        "local_json_fullpath": "inventory/serviceaccounts/amarbank-sre-f522711415b2.json", 
+        "local_json_name": "amarbank-sre-f522711415b2.json", 
+        "remote_account_fullname": "amarbanksre-ansible@amarbank-sre.iam.gserviceaccount.com", 
+        "remote_account_name": "amarbanksre-ansible"
+    }, 
+    "msg": "non-zero return code", 
+    "rc": 1, 
+    "start": "2020-08-25 17:59:43.666293", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "", 
+    "stdout_lines": []
+}
+...ignoring
+Read vars_file 'vars/gcp.yml'
+
+TASK [Decrypt ssh key file] **************************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/decrypt.yml:15
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/gcp.yml'
+
+TASK [debug] *****************************************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/decrypt.yml:19
+ok: [localhost] => {
+    "sa_encrypted": {
+        "changed": true, 
+        "failed": true, 
+        "msg": "All items completed", 
+        "results": [
+            {
+                "ansible_loop_var": "item", 
+                "changed": true, 
+                "cmd": "cat \"inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json\" | grep \\$ANSIBLE_VAULT;", 
+                "delta": "0:00:00.008443", 
+                "end": "2020-08-25 17:59:43.479172", 
+                "failed": true, 
+                "invocation": {
+                    "module_args": {
+                        "_raw_params": "cat \"inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json\" | grep \\$ANSIBLE_VAULT;", 
+                        "_uses_shell": true, 
+                        "argv": null, 
+                        "chdir": null, 
+                        "creates": null, 
+                        "executable": null, 
+                        "removes": null, 
+                        "stdin": null, 
+                        "stdin_add_newline": true, 
+                        "strip_empty_ends": true, 
+                        "warn": true
+                    }
+                }, 
+                "item": {
+                    "local_json_directory": "inventory/serviceaccounts/", 
+                    "local_json_fullpath": "inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json", 
+                    "local_json_name": "amarbank-shared-platform-4c0898062f0c.json", 
+                    "remote_account_fullname": "amarbanksharedplatform-ansible@amarbank-shared-platform.iam.gserviceaccount.com", 
+                    "remote_account_name": "amarbanksharedplatform-ansible"
+                }, 
+                "msg": "non-zero return code", 
+                "rc": 1, 
+                "start": "2020-08-25 17:59:43.470729", 
+                "stderr": "", 
+                "stderr_lines": [], 
+                "stdout": "", 
+                "stdout_lines": []
+            }, 
+            {
+                "ansible_loop_var": "item", 
+                "changed": true, 
+                "cmd": "cat \"inventory/serviceaccounts/amarbank-sre-f522711415b2.json\" | grep \\$ANSIBLE_VAULT;", 
+                "delta": "0:00:00.008342", 
+                "end": "2020-08-25 17:59:43.674635", 
+                "failed": true, 
+                "invocation": {
+                    "module_args": {
+                        "_raw_params": "cat \"inventory/serviceaccounts/amarbank-sre-f522711415b2.json\" | grep \\$ANSIBLE_VAULT;", 
+                        "_uses_shell": true, 
+                        "argv": null, 
+                        "chdir": null, 
+                        "creates": null, 
+                        "executable": null, 
+                        "removes": null, 
+                        "stdin": null, 
+                        "stdin_add_newline": true, 
+                        "strip_empty_ends": true, 
+                        "warn": true
+                    }
+                }, 
+                "item": {
+                    "local_json_directory": "inventory/serviceaccounts/", 
+                    "local_json_fullpath": "inventory/serviceaccounts/amarbank-sre-f522711415b2.json", 
+                    "local_json_name": "amarbank-sre-f522711415b2.json", 
+                    "remote_account_fullname": "amarbanksre-ansible@amarbank-sre.iam.gserviceaccount.com", 
+                    "remote_account_name": "amarbanksre-ansible"
+                }, 
+                "msg": "non-zero return code", 
+                "rc": 1, 
+                "start": "2020-08-25 17:59:43.666293", 
+                "stderr": "", 
+                "stderr_lines": [], 
+                "stdout": "", 
+                "stdout_lines": []
+            }
+        ]
+    }
+}
+Read vars_file 'vars/gcp.yml'
+
+TASK [Decrypt service account file] ******************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/decrypt.yml:22
+skipping: [localhost] => (item={u'remote_account_fullname': u'amarbanksharedplatform-ansible@amarbank-shared-platform.iam.gserviceaccount.com', u'local_json_directory': u'inventory/serviceaccounts/', u'remote_account_name': u'amarbanksharedplatform-ansible', u'local_json_fullpath': u'inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json', u'local_json_name': u'amarbank-shared-platform-4c0898062f0c.json'})  => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "local_json_directory": "inventory/serviceaccounts/", 
+        "local_json_fullpath": "inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json", 
+        "local_json_name": "amarbank-shared-platform-4c0898062f0c.json", 
+        "remote_account_fullname": "amarbanksharedplatform-ansible@amarbank-shared-platform.iam.gserviceaccount.com", 
+        "remote_account_name": "amarbanksharedplatform-ansible"
+    }, 
+    "skip_reason": "Conditional result was False"
+}
+skipping: [localhost] => (item={u'remote_account_fullname': u'amarbanksre-ansible@amarbank-sre.iam.gserviceaccount.com', u'local_json_directory': u'inventory/serviceaccounts/', u'remote_account_name': u'amarbanksre-ansible', u'local_json_fullpath': u'inventory/serviceaccounts/amarbank-sre-f522711415b2.json', u'local_json_name': u'amarbank-sre-f522711415b2.json'})  => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "local_json_directory": "inventory/serviceaccounts/", 
+        "local_json_fullpath": "inventory/serviceaccounts/amarbank-sre-f522711415b2.json", 
+        "local_json_name": "amarbank-sre-f522711415b2.json", 
+        "remote_account_fullname": "amarbanksre-ansible@amarbank-sre.iam.gserviceaccount.com", 
+        "remote_account_name": "amarbanksre-ansible"
+    }, 
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/gcp.yml'
+
+TASK [Get info on a network] *************************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/network.yml:3
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: rivan_amarbank
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378384.72-24605-155299307860901 `" && echo ansible-tmp-1598378384.72-24605-155299307860901="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378384.72-24605-155299307860901 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/cloud/google/gcp_compute_network_info.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmpkqvAf9 TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378384.72-24605-155299307860901/AnsiballZ_gcp_compute_network_info.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378384.72-24605-155299307860901/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378384.72-24605-155299307860901/AnsiballZ_gcp_compute_network_info.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-iycabzmmlsqmqjlminednbkypgjhuouc ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378384.72-24605-155299307860901/AnsiballZ_gcp_compute_network_info.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378384.72-24605-155299307860901/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "auth_kind": "serviceaccount", 
+            "env_type": null, 
+            "filters": [
+                "name = \"amarbank-global\""
+            ], 
+            "project": "amarbank-shared-platform", 
+            "scopes": [
+                "https://www.googleapis.com/auth/compute"
+            ], 
+            "service_account_contents": null, 
+            "service_account_email": null, 
+            "service_account_file": "inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json"
+        }
+    }, 
+    "resources": [
+        {
+            "autoCreateSubnetworks": false, 
+            "creationTimestamp": "2020-07-24T01:28:41.740-07:00", 
+            "description": "PT Bank Amar Indonesia global VPC", 
+            "id": "1181635626604635478", 
+            "kind": "compute#network", 
+            "name": "amarbank-global", 
+            "peerings": [
+                {
+                    "autoCreateRoutes": true, 
+                    "exchangeSubnetRoutes": true, 
+                    "exportCustomRoutes": false, 
+                    "exportSubnetRoutesWithPublicIp": false, 
+                    "importCustomRoutes": false, 
+                    "importSubnetRoutesWithPublicIp": false, 
+                    "name": "cloudsql-postgres-googleapis-com", 
+                    "network": "https://www.googleapis.com/compute/v1/projects/speckle-umbrella-pg-16/global/networks/cloud-sql-network-646318652134-886963365e88589b", 
+                    "state": "ACTIVE", 
+                    "stateDetails": "[2020-08-18T02:04:21.161-07:00]: Connected."
+                }, 
+                {
+                    "autoCreateRoutes": true, 
+                    "exchangeSubnetRoutes": true, 
+                    "exportCustomRoutes": true, 
+                    "exportSubnetRoutesWithPublicIp": false, 
+                    "importCustomRoutes": false, 
+                    "importSubnetRoutesWithPublicIp": false, 
+                    "name": "servicenetworking-googleapis-com", 
+                    "network": "https://www.googleapis.com/compute/v1/projects/b8fc1879027779a99p-tp/global/networks/servicenetworking", 
+                    "state": "ACTIVE", 
+                    "stateDetails": "[2020-08-11T03:59:13.708-07:00]: Connected."
+                }
+            ], 
+            "routingConfig": {
+                "routingMode": "GLOBAL"
+            }, 
+            "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+            "subnetworks": [
+                "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-k8s-us1-snet-01", 
+                "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-us1-snet-01", 
+                "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-d-k8s-sea2-snet-01", 
+                "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-p-fe-k8s-sea2-snet-01", 
+                "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-d-db-sea2-snet-01", 
+                "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sre-sea2-snet-01", 
+                "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sea2-int-lb-snet", 
+                "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-dt-sea2-snet-01"
+            ]
+        }
+    ]
+}
+Read vars_file 'vars/gcp.yml'
+
+TASK [Get info on a subnetwork] **********************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/subnetwork.yml:3
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: rivan_amarbank
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378386.14-24629-266603183785456 `" && echo ansible-tmp-1598378386.14-24629-266603183785456="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378386.14-24629-266603183785456 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/cloud/google/gcp_compute_subnetwork_info.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmphS7fKg TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378386.14-24629-266603183785456/AnsiballZ_gcp_compute_subnetwork_info.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378386.14-24629-266603183785456/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378386.14-24629-266603183785456/AnsiballZ_gcp_compute_subnetwork_info.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-vzkcsqkgsfwqoymetqmtnxrfwgsqayrv ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378386.14-24629-266603183785456/AnsiballZ_gcp_compute_subnetwork_info.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378386.14-24629-266603183785456/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "auth_kind": "serviceaccount", 
+            "env_type": null, 
+            "filters": [
+                "name = \"ab-sre-sea2-snet-01\""
+            ], 
+            "project": "amarbank-shared-platform", 
+            "region": "asia-southeast2", 
+            "scopes": [
+                "https://www.googleapis.com/auth/compute"
+            ], 
+            "service_account_contents": null, 
+            "service_account_email": null, 
+            "service_account_file": "inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json"
+        }
+    }, 
+    "resources": [
+        {
+            "creationTimestamp": "2020-08-18T00:51:26.922-07:00", 
+            "description": "", 
+            "enableFlowLogs": false, 
+            "fingerprint": "M9laxlxN6wM=", 
+            "gatewayAddress": "10.247.84.1", 
+            "id": "3849388158023513745", 
+            "ipCidrRange": "10.247.84.0/26", 
+            "kind": "compute#subnetwork", 
+            "logConfig": {
+                "enable": false
+            }, 
+            "name": "ab-sre-sea2-snet-01", 
+            "network": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+            "privateIpGoogleAccess": false, 
+            "privateIpv6GoogleAccess": "DISABLE_GOOGLE_ACCESS", 
+            "purpose": "PRIVATE", 
+            "region": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2", 
+            "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sre-sea2-snet-01"
+        }
+    ]
+}
+Read vars_file 'vars/gcp.yml'
+
+TASK [Create a firewall] *****************************************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/firewall.yml:3
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: rivan_amarbank
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378387.44-24653-14932195504607 `" && echo ansible-tmp-1598378387.44-24653-14932195504607="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378387.44-24653-14932195504607 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/cloud/google/gcp_compute_firewall.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmptnkCfD TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378387.44-24653-14932195504607/AnsiballZ_gcp_compute_firewall.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378387.44-24653-14932195504607/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378387.44-24653-14932195504607/AnsiballZ_gcp_compute_firewall.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-agjxdujhjjnoanssfagwejqhcrfpvanq ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378387.44-24653-14932195504607/AnsiballZ_gcp_compute_firewall.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378387.44-24653-14932195504607/ > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+ok: [localhost] => (item={u'target_tags': u'webport-public-rules', u'protocol': u'tcp', u'source_ranges': u'0.0.0.0/0', u'name': u'ab-global-internet-webport-allow-rule', u'port': [u'80', u'443']}) => {
+    "allowed": [
+        {
+            "IPProtocol": "tcp", 
+            "ports": [
+                "80", 
+                "443"
+            ]
+        }
+    ], 
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "creationTimestamp": "2020-08-22T03:41:56.413-07:00", 
+    "description": "", 
+    "direction": "INGRESS", 
+    "disabled": false, 
+    "id": "2991555280596977819", 
+    "invocation": {
+        "module_args": {
+            "allowed": [
+                {
+                    "ip_protocol": "tcp", 
+                    "ports": [
+                        "80", 
+                        "443"
+                    ]
+                }
+            ], 
+            "auth_kind": "serviceaccount", 
+            "denied": null, 
+            "description": null, 
+            "destination_ranges": null, 
+            "direction": null, 
+            "disabled": null, 
+            "env_type": null, 
+            "name": "ab-global-internet-webport-allow-rule", 
+            "network": {
+                "autoCreateSubnetworks": false, 
+                "creationTimestamp": "2020-07-24T01:28:41.740-07:00", 
+                "description": "PT Bank Amar Indonesia global VPC", 
+                "id": "1181635626604635478", 
+                "kind": "compute#network", 
+                "name": "amarbank-global", 
+                "peerings": [
+                    {
+                        "autoCreateRoutes": true, 
+                        "exchangeSubnetRoutes": true, 
+                        "exportCustomRoutes": false, 
+                        "exportSubnetRoutesWithPublicIp": false, 
+                        "importCustomRoutes": false, 
+                        "importSubnetRoutesWithPublicIp": false, 
+                        "name": "cloudsql-postgres-googleapis-com", 
+                        "network": "https://www.googleapis.com/compute/v1/projects/speckle-umbrella-pg-16/global/networks/cloud-sql-network-646318652134-886963365e88589b", 
+                        "state": "ACTIVE", 
+                        "stateDetails": "[2020-08-18T02:04:21.161-07:00]: Connected."
+                    }, 
+                    {
+                        "autoCreateRoutes": true, 
+                        "exchangeSubnetRoutes": true, 
+                        "exportCustomRoutes": true, 
+                        "exportSubnetRoutesWithPublicIp": false, 
+                        "importCustomRoutes": false, 
+                        "importSubnetRoutesWithPublicIp": false, 
+                        "name": "servicenetworking-googleapis-com", 
+                        "network": "https://www.googleapis.com/compute/v1/projects/b8fc1879027779a99p-tp/global/networks/servicenetworking", 
+                        "state": "ACTIVE", 
+                        "stateDetails": "[2020-08-11T03:59:13.708-07:00]: Connected."
+                    }
+                ], 
+                "routingConfig": {
+                    "routingMode": "GLOBAL"
+                }, 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+                "subnetworks": [
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-k8s-us1-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-us1-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-d-k8s-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-p-fe-k8s-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-d-db-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sre-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sea2-int-lb-snet", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-dt-sea2-snet-01"
+                ]
+            }, 
+            "priority": 1000, 
+            "project": "amarbank-shared-platform", 
+            "scopes": [
+                "https://www.googleapis.com/auth/compute"
+            ], 
+            "service_account_contents": null, 
+            "service_account_email": null, 
+            "service_account_file": "inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json", 
+            "source_ranges": [
+                "0.0.0.0/0"
+            ], 
+            "source_service_accounts": null, 
+            "source_tags": null, 
+            "state": "present", 
+            "target_service_accounts": null, 
+            "target_tags": [
+                "webport-public-rules"
+            ]
+        }
+    }, 
+    "item": {
+        "name": "ab-global-internet-webport-allow-rule", 
+        "port": [
+            "80", 
+            "443"
+        ], 
+        "protocol": "tcp", 
+        "source_ranges": "0.0.0.0/0", 
+        "target_tags": "webport-public-rules"
+    }, 
+    "kind": "compute#firewall", 
+    "logConfig": {
+        "enable": false
+    }, 
+    "name": "ab-global-internet-webport-allow-rule", 
+    "network": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+    "priority": 1000, 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/firewalls/ab-global-internet-webport-allow-rule", 
+    "sourceRanges": [
+        "0.0.0.0/0"
+    ], 
+    "targetTags": [
+        "webport-public-rules"
+    ]
+}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378388.52-24653-95070717702472 `" && echo ansible-tmp-1598378388.52-24653-95070717702472="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378388.52-24653-95070717702472 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/cloud/google/gcp_compute_firewall.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmp0gD0nr TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378388.52-24653-95070717702472/AnsiballZ_gcp_compute_firewall.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378388.52-24653-95070717702472/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378388.52-24653-95070717702472/AnsiballZ_gcp_compute_firewall.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-nmiscnunubbrylzidiajdooezjwziuvh ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378388.52-24653-95070717702472/AnsiballZ_gcp_compute_firewall.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378388.52-24653-95070717702472/ > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+ok: [localhost] => (item={u'target_tags': u'ssh-public-rules', u'protocol': u'tcp', u'source_ranges': u'0.0.0.0/0', u'name': u'ab-global-internet-ssh-allow-rule', u'port': u'22'}) => {
+    "allowed": [
+        {
+            "IPProtocol": "tcp", 
+            "ports": [
+                "22"
+            ]
+        }
+    ], 
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "creationTimestamp": "2020-08-22T03:42:02.713-07:00", 
+    "description": "", 
+    "direction": "INGRESS", 
+    "disabled": false, 
+    "id": "1700683059984943253", 
+    "invocation": {
+        "module_args": {
+            "allowed": [
+                {
+                    "ip_protocol": "tcp", 
+                    "ports": [
+                        "22"
+                    ]
+                }
+            ], 
+            "auth_kind": "serviceaccount", 
+            "denied": null, 
+            "description": null, 
+            "destination_ranges": null, 
+            "direction": null, 
+            "disabled": null, 
+            "env_type": null, 
+            "name": "ab-global-internet-ssh-allow-rule", 
+            "network": {
+                "autoCreateSubnetworks": false, 
+                "creationTimestamp": "2020-07-24T01:28:41.740-07:00", 
+                "description": "PT Bank Amar Indonesia global VPC", 
+                "id": "1181635626604635478", 
+                "kind": "compute#network", 
+                "name": "amarbank-global", 
+                "peerings": [
+                    {
+                        "autoCreateRoutes": true, 
+                        "exchangeSubnetRoutes": true, 
+                        "exportCustomRoutes": false, 
+                        "exportSubnetRoutesWithPublicIp": false, 
+                        "importCustomRoutes": false, 
+                        "importSubnetRoutesWithPublicIp": false, 
+                        "name": "cloudsql-postgres-googleapis-com", 
+                        "network": "https://www.googleapis.com/compute/v1/projects/speckle-umbrella-pg-16/global/networks/cloud-sql-network-646318652134-886963365e88589b", 
+                        "state": "ACTIVE", 
+                        "stateDetails": "[2020-08-18T02:04:21.161-07:00]: Connected."
+                    }, 
+                    {
+                        "autoCreateRoutes": true, 
+                        "exchangeSubnetRoutes": true, 
+                        "exportCustomRoutes": true, 
+                        "exportSubnetRoutesWithPublicIp": false, 
+                        "importCustomRoutes": false, 
+                        "importSubnetRoutesWithPublicIp": false, 
+                        "name": "servicenetworking-googleapis-com", 
+                        "network": "https://www.googleapis.com/compute/v1/projects/b8fc1879027779a99p-tp/global/networks/servicenetworking", 
+                        "state": "ACTIVE", 
+                        "stateDetails": "[2020-08-11T03:59:13.708-07:00]: Connected."
+                    }
+                ], 
+                "routingConfig": {
+                    "routingMode": "GLOBAL"
+                }, 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+                "subnetworks": [
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-k8s-us1-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-us1-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-d-k8s-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-p-fe-k8s-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-d-db-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sre-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sea2-int-lb-snet", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-dt-sea2-snet-01"
+                ]
+            }, 
+            "priority": 1000, 
+            "project": "amarbank-shared-platform", 
+            "scopes": [
+                "https://www.googleapis.com/auth/compute"
+            ], 
+            "service_account_contents": null, 
+            "service_account_email": null, 
+            "service_account_file": "inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json", 
+            "source_ranges": [
+                "0.0.0.0/0"
+            ], 
+            "source_service_accounts": null, 
+            "source_tags": null, 
+            "state": "present", 
+            "target_service_accounts": null, 
+            "target_tags": [
+                "ssh-public-rules"
+            ]
+        }
+    }, 
+    "item": {
+        "name": "ab-global-internet-ssh-allow-rule", 
+        "port": "22", 
+        "protocol": "tcp", 
+        "source_ranges": "0.0.0.0/0", 
+        "target_tags": "ssh-public-rules"
+    }, 
+    "kind": "compute#firewall", 
+    "logConfig": {
+        "enable": false
+    }, 
+    "name": "ab-global-internet-ssh-allow-rule", 
+    "network": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+    "priority": 1000, 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/firewalls/ab-global-internet-ssh-allow-rule", 
+    "sourceRanges": [
+        "0.0.0.0/0"
+    ], 
+    "targetTags": [
+        "ssh-public-rules"
+    ]
+}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378389.38-24653-187983528852688 `" && echo ansible-tmp-1598378389.38-24653-187983528852688="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378389.38-24653-187983528852688 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/cloud/google/gcp_compute_firewall.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmpNGWJK8 TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378389.38-24653-187983528852688/AnsiballZ_gcp_compute_firewall.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378389.38-24653-187983528852688/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378389.38-24653-187983528852688/AnsiballZ_gcp_compute_firewall.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-mrusrfknewzvfjothfnbnarewjokuxye ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378389.38-24653-187983528852688/AnsiballZ_gcp_compute_firewall.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378389.38-24653-187983528852688/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item={u'target_tags': u'mongodb-public-rules', u'protocol': u'tcp', u'source_ranges': u'0.0.0.0/0', u'name': u'ab-global-internet-mongodb-allow-rule', u'port': u'27017'}) => {
+    "allowed": [
+        {
+            "IPProtocol": "tcp", 
+            "ports": [
+                "27017"
+            ]
+        }
+    ], 
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "creationTimestamp": "2020-08-24T06:26:35.014-07:00", 
+    "description": "", 
+    "direction": "INGRESS", 
+    "disabled": false, 
+    "id": "6162402602986143460", 
+    "invocation": {
+        "module_args": {
+            "allowed": [
+                {
+                    "ip_protocol": "tcp", 
+                    "ports": [
+                        "27017"
+                    ]
+                }
+            ], 
+            "auth_kind": "serviceaccount", 
+            "denied": null, 
+            "description": null, 
+            "destination_ranges": null, 
+            "direction": null, 
+            "disabled": null, 
+            "env_type": null, 
+            "name": "ab-global-internet-mongodb-allow-rule", 
+            "network": {
+                "autoCreateSubnetworks": false, 
+                "creationTimestamp": "2020-07-24T01:28:41.740-07:00", 
+                "description": "PT Bank Amar Indonesia global VPC", 
+                "id": "1181635626604635478", 
+                "kind": "compute#network", 
+                "name": "amarbank-global", 
+                "peerings": [
+                    {
+                        "autoCreateRoutes": true, 
+                        "exchangeSubnetRoutes": true, 
+                        "exportCustomRoutes": false, 
+                        "exportSubnetRoutesWithPublicIp": false, 
+                        "importCustomRoutes": false, 
+                        "importSubnetRoutesWithPublicIp": false, 
+                        "name": "cloudsql-postgres-googleapis-com", 
+                        "network": "https://www.googleapis.com/compute/v1/projects/speckle-umbrella-pg-16/global/networks/cloud-sql-network-646318652134-886963365e88589b", 
+                        "state": "ACTIVE", 
+                        "stateDetails": "[2020-08-18T02:04:21.161-07:00]: Connected."
+                    }, 
+                    {
+                        "autoCreateRoutes": true, 
+                        "exchangeSubnetRoutes": true, 
+                        "exportCustomRoutes": true, 
+                        "exportSubnetRoutesWithPublicIp": false, 
+                        "importCustomRoutes": false, 
+                        "importSubnetRoutesWithPublicIp": false, 
+                        "name": "servicenetworking-googleapis-com", 
+                        "network": "https://www.googleapis.com/compute/v1/projects/b8fc1879027779a99p-tp/global/networks/servicenetworking", 
+                        "state": "ACTIVE", 
+                        "stateDetails": "[2020-08-11T03:59:13.708-07:00]: Connected."
+                    }
+                ], 
+                "routingConfig": {
+                    "routingMode": "GLOBAL"
+                }, 
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+                "subnetworks": [
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-k8s-us1-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-us1-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-d-k8s-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-p-fe-k8s-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-d-db-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sre-sea2-snet-01", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sea2-int-lb-snet", 
+                    "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-dt-sea2-snet-01"
+                ]
+            }, 
+            "priority": 1000, 
+            "project": "amarbank-shared-platform", 
+            "scopes": [
+                "https://www.googleapis.com/auth/compute"
+            ], 
+            "service_account_contents": null, 
+            "service_account_email": null, 
+            "service_account_file": "inventory/serviceaccounts/amarbank-shared-platform-4c0898062f0c.json", 
+            "source_ranges": [
+                "0.0.0.0/0"
+            ], 
+            "source_service_accounts": null, 
+            "source_tags": null, 
+            "state": "present", 
+            "target_service_accounts": null, 
+            "target_tags": [
+                "mongodb-public-rules"
+            ]
+        }
+    }, 
+    "item": {
+        "name": "ab-global-internet-mongodb-allow-rule", 
+        "port": "27017", 
+        "protocol": "tcp", 
+        "source_ranges": "0.0.0.0/0", 
+        "target_tags": "mongodb-public-rules"
+    }, 
+    "kind": "compute#firewall", 
+    "logConfig": {
+        "enable": false
+    }, 
+    "name": "ab-global-internet-mongodb-allow-rule", 
+    "network": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+    "priority": 1000, 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/firewalls/ab-global-internet-mongodb-allow-rule", 
+    "sourceRanges": [
+        "0.0.0.0/0"
+    ], 
+    "targetTags": [
+        "mongodb-public-rules"
+    ]
+}
+Read vars_file 'vars/gcp.yml'
+
+TASK [Create mongodb primary and secondary members] **************************************************************************************************************************
+task path: /home/rivan_amarbank/ansible-gcp-vms-mongodb-clusters/tasks/vms.yml:5
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: rivan_amarbank
+<localhost> EXEC /bin/sh -c 'echo ~rivan_amarbank && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/rivan_amarbank/.ansible/tmp `"&& mkdir "` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378390.53-24721-69521349748455 `" && echo ansible-tmp-1598378390.53-24721-69521349748455="` echo /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378390.53-24721-69521349748455 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/cloud/google/gcp_compute_instance.py
+<localhost> PUT /home/rivan_amarbank/.ansible/tmp/ansible-local-24459TjQUrr/tmpqGSa8w TO /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378390.53-24721-69521349748455/AnsiballZ_gcp_compute_instance.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378390.53-24721-69521349748455/ /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378390.53-24721-69521349748455/AnsiballZ_gcp_compute_instance.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-tkwoqazreahthbkpyyzzjlpzldgkbbfh ; /usr/bin/python /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378390.53-24721-69521349748455/AnsiballZ_gcp_compute_instance.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/rivan_amarbank/.ansible/tmp/ansible-tmp-1598378390.53-24721-69521349748455/ > /dev/null 2>&1 && sleep 0'
+The full traceback is:
+WARNING: The below traceback may *not* be related to the actual failure.
+  File "/tmp/ansible_gcp_compute_instance_payload_AQx1K7/ansible_gcp_compute_instance_payload.zip/ansible/module_utils/gcp_utils.py", line 307, in raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python2.7/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+failed: [localhost] (item=[{u'cluster_name': u'sre-mongodb-prod-personal-finance'}, {u'index': u'01', u'role': u'primary', u'private_ip': u'10.247.84.11', u'zone': u'b', u'images': u'https://www.googleapis.com/compute/v1/projects/centos-cloud/global/images/centos-8-v20200811', u'type': u'n1-standard-2'}]) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "auth_kind": "serviceaccount", 
+            "can_ip_forward": null, 
+            "deletion_protection": null, 
+            "disks": [
+                {
+                    "auto_delete": null, 
+                    "boot": null, 
+                    "device_name": null, 
+                    "disk_encryption_key": null, 
+                    "index": null, 
+                    "initialize_params": {
+                        "disk_name": "sre-mongodb-prod-personal-finance-primary-01-disk-01", 
+                        "disk_size_gb": 15, 
+                        "disk_type": "pd-standard", 
+                        "source_image": "https://www.googleapis.com/compute/v1/projects/centos-cloud/global/images/centos-8-v20200811", 
+                        "source_image_encryption_key": null
+                    }, 
+                    "interface": null, 
+                    "mode": null, 
+                    "source": null, 
+                    "type": null
+                }, 
+                {
+                    "auto_delete": null, 
+                    "boot": null, 
+                    "device_name": null, 
+                    "disk_encryption_key": null, 
+                    "index": null, 
+                    "initialize_params": {
+                        "disk_name": "sre-mongodb-prod-personal-finance-primary-01-disk-02", 
+                        "disk_size_gb": 20, 
+                        "disk_type": "pd-balanced", 
+                        "source_image": null, 
+                        "source_image_encryption_key": null
+                    }, 
+                    "interface": null, 
+                    "mode": null, 
+                    "source": null, 
+                    "type": null
+                }
+            ], 
+            "env_type": null, 
+            "guest_accelerators": null, 
+            "hostname": null, 
+            "labels": null, 
+            "machine_type": "n1-standard-2", 
+            "metadata": null, 
+            "min_cpu_platform": null, 
+            "name": "sre-mongodb-prod-personal-finance-primary-01", 
+            "network_interfaces": [
+                {
+                    "access_configs": null, 
+                    "alias_ip_ranges": null, 
+                    "network": {
+                        "autoCreateSubnetworks": false, 
+                        "creationTimestamp": "2020-07-24T01:28:41.740-07:00", 
+                        "description": "PT Bank Amar Indonesia global VPC", 
+                        "id": "1181635626604635478", 
+                        "kind": "compute#network", 
+                        "name": "amarbank-global", 
+                        "peerings": [
+                            {
+                                "autoCreateRoutes": true, 
+                                "exchangeSubnetRoutes": true, 
+                                "exportCustomRoutes": false, 
+                                "exportSubnetRoutesWithPublicIp": false, 
+                                "importCustomRoutes": false, 
+                                "importSubnetRoutesWithPublicIp": false, 
+                                "name": "cloudsql-postgres-googleapis-com", 
+                                "network": "https://www.googleapis.com/compute/v1/projects/speckle-umbrella-pg-16/global/networks/cloud-sql-network-646318652134-886963365e88589b", 
+                                "state": "ACTIVE", 
+                                "stateDetails": "[2020-08-18T02:04:21.161-07:00]: Connected."
+                            }, 
+                            {
+                                "autoCreateRoutes": true, 
+                                "exchangeSubnetRoutes": true, 
+                                "exportCustomRoutes": true, 
+                                "exportSubnetRoutesWithPublicIp": false, 
+                                "importCustomRoutes": false, 
+                                "importSubnetRoutesWithPublicIp": false, 
+                                "name": "servicenetworking-googleapis-com", 
+                                "network": "https://www.googleapis.com/compute/v1/projects/b8fc1879027779a99p-tp/global/networks/servicenetworking", 
+                                "state": "ACTIVE", 
+                                "stateDetails": "[2020-08-11T03:59:13.708-07:00]: Connected."
+                            }
+                        ], 
+                        "routingConfig": {
+                            "routingMode": "GLOBAL"
+                        }, 
+                        "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+                        "subnetworks": [
+                            "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-k8s-us1-snet-01", 
+                            "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/us-central1/subnetworks/ab-dt-us1-snet-01", 
+                            "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-d-k8s-sea2-snet-01", 
+                            "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-fnd-p-fe-k8s-sea2-snet-01", 
+                            "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-d-db-sea2-snet-01", 
+                            "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sre-sea2-snet-01", 
+                            "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sea2-int-lb-snet", 
+                            "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-dt-sea2-snet-01"
+                        ]
+                    }, 
+                    "network_ip": "10.247.84.11", 
+                    "subnetwork": {
+                        "changed": false, 
+                        "failed": false, 
+                        "resources": [
+                            {
+                                "creationTimestamp": "2020-08-18T00:51:26.922-07:00", 
+                                "description": "", 
+                                "enableFlowLogs": false, 
+                                "fingerprint": "M9laxlxN6wM=", 
+                                "gatewayAddress": "10.247.84.1", 
+                                "id": "3849388158023513745", 
+                                "ipCidrRange": "10.247.84.0/26", 
+                                "kind": "compute#subnetwork", 
+                                "logConfig": {
+                                    "enable": false
+                                }, 
+                                "name": "ab-sre-sea2-snet-01", 
+                                "network": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networks/amarbank-global", 
+                                "privateIpGoogleAccess": false, 
+                                "privateIpv6GoogleAccess": "DISABLE_GOOGLE_ACCESS", 
+                                "purpose": "PRIVATE", 
+                                "region": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2", 
+                                "selfLink": "https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/regions/asia-southeast2/subnetworks/ab-sre-sea2-snet-01"
+                            }
+                        ]
+                    }
+                }
+            ], 
+            "project": "amarbank-sre", 
+            "scheduling": null, 
+            "scopes": [
+                "https://www.googleapis.com/auth/compute"
+            ], 
+            "service_account_contents": null, 
+            "service_account_email": null, 
+            "service_account_file": "inventory/serviceaccounts/amarbank-sre-f522711415b2.json", 
+            "service_accounts": null, 
+            "shielded_instance_config": null, 
+            "state": "present", 
+            "status": null, 
+            "tags": {
+                "fingerprint": null, 
+                "items": [
+                    "webport-public-rules", 
+                    "ssh-public-rules", 
+                    "mongodb-public-rules"
+                ]
+            }, 
+            "zone": "asia-southeast2-b"
+        }
+    }, 
+    "item": [
+        {
+            "cluster_name": "sre-mongodb-prod-personal-finance"
+        }, 
+        {
+            "images": "https://www.googleapis.com/compute/v1/projects/centos-cloud/global/images/centos-8-v20200811", 
+            "index": "01", 
+            "private_ip": "10.247.84.11", 
+            "role": "primary", 
+            "type": "n1-standard-2", 
+            "zone": "b"
+        }
+    ], 
+    "msg": "GCP returned error: {u'error': {u'code': 400, u'message': u'Invalid value for field \\'resource.networkInterfaces[0]\\': \\'{  \"network\": \"https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networ...\\'. Subnetwork should be specified for custom subnetmode network', u'errors': [{u'domain': u'global', u'message': u'Invalid value for field \\'resource.networkInterfaces[0]\\': \\'{  \"network\": \"https://www.googleapis.com/compute/v1/projects/amarbank-shared-platform/global/networ...\\'. Subnetwork should be specified for custom subnetmode network', u'reason': u'invalid'}]}}"
+}
+skipping: [localhost] => (item=[{u'cluster_name': u'sre-mongodb-prod-personal-finance'}, {u'index': u'01', u'role': u'arbitary', u'private_ip': u'10.247.84.14', u'zone': u'a', u'images': u'https://www.googleapis.com/compute/v1/projects/centos-cloud/global/images/centos-8-v20200811', u'type': u'n1-standard-1'}])  => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": [
+        {
+            "cluster_name": "sre-mongodb-prod-personal-finance"
+        }, 
+        {
+            "images": "https://www.googleapis.com/compute/v1/projects/centos-cloud/global/images/centos-8-v20200811", 
+            "index": "01", 
+            "private_ip": "10.247.84.14", 
+            "role": "arbitary", 
+            "type": "n1-standard-1", 
+            "zone": "a"
+        }
+    ], 
+    "skip_reason": "Conditional result was False"
+}
+
+PLAY RECAP *******************************************************************************************************************************************************************
+localhost                  : ok=7    changed=2    unreachable=0    failed=1    skipped=2    rescued=0    ignored=2   
+

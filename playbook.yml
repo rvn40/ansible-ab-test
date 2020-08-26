@@ -1,0 +1,12 @@
+---
+
+- hosts: local
+  become: yes
+  vars_files:
+    - vars/gcp.yml
+  tasks:
+    - include: ./tasks/network.yml
+    - include: ./tasks/subnetwork.yml
+    - include: ./tasks/firewall.yml
+    - include: ./tasks/vms.yml 
+    

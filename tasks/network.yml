@@ -1,0 +1,11 @@
+---
+
+- name: Get info on a network
+  gcp_compute_network_info:
+    filters:
+    - name = "{{ vars.resources.vpc.name }}"
+    project: "{{ vars.project.shared_projectID }}"
+    auth_kind: "{{ vars.project.authkind }}"
+    service_account_file: "{{ vars.project.serviceaccounts[0].local_json_fullpath }}"
+  register: network
+

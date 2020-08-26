@@ -1,0 +1,66 @@
+---
+
+
+  
+- name: Create mongodb primary and secondary members 
+  gcp_compute_instance:
+    name: "{{item[0].cluster_name}}-{{item[1].role}}-{{item[1].index}}"
+    machine_type: "{{item[1].type}}"
+    disks:
+    - initialize_params:
+        disk_name: "{{item[0].cluster_name}}-{{item[1].role}}-{{item[1].index}}-disk-01"
+        disk_size_gb: "15"
+        disk_type: "pd-standard"
+        source_image: "{{item[1].images}}"
+    - initialize_params:
+        disk_name: "{{item[0].cluster_name}}-{{item[1].role}}-{{item[1].index}}-disk-02"
+        disk_size_gb: "20"
+        disk_type: "pd-balanced"
+    network_interfaces:
+    - network: "{{ network.resources[0] }}"
+      subnetwork: "{{ subnetwork }}"
+      network_ip: "{{ item[1].private_ip }}"
+    zone: "{{ vars.general.region_default }}-{{ item[1].zone }}"
+    tags:
+      items: ["webport-public-rules", "ssh-public-rules", "mongodb-public-rules"]
+    project: "{{ vars.project.projectID }}"
+    auth_kind: "{{ vars.project.authkind }}"
+    service_account_file: "{{ vars.project.serviceaccounts[1].local_json_fullpath }}"
+    state: "{{ vars.resources.state.vms | default(vars.resources.state.default) }}"
+  register: mongo_vms
+  with_subelements: 
+    - "{{ vars.resources.vms }}"
+    - properties
+  when: item[1].role != "arbitary"
+
+
+- name: Create mongodb arbitary members 
+  gcp_compute_instance:
+    name: "{{item[0].cluster_name}}-{{item[1].role}}-{{item[1].index}}"
+    machine_type: "{{item[1].type}}"
+    disks:
+    - initialize_params:
+        disk_name: "{{item[0].cluster_name}}-{{item[1].role}}-{{item[1].index}}-disk-01"
+        disk_size_gb: "15"
+        disk_type: "pd-standard"
+        source_image: "{{item[1].images}}"
+    - initialize_params:
+        disk_name: "{{item[0].cluster_name}}-{{item[1].role}}-{{item[1].index}}-disk-02"
+        disk_size_gb: "20"
+        disk_type: "pd-balanced"
+    network_interfaces:
+    - network: "{{ network }}"
+      subnetwork: "{{ subnetwork.results[0] }}"
+      network_ip: "{{ item[1].private_ip }}"
+    zone: "{{ vars.general.region_default }}-{{ item[1].zone }}"
+    tags:
+      items: ["webport-public-rules", "ssh-public-rules", "mongodb-public-rules"]
+    project: "{{ vars.project.projectID }}"
+    auth_kind: "{{ vars.project.authkind }}"
+    service_account_file: "{{ vars.project.serviceaccounts[1].local_json_fullpath }}"
+    state: "{{ vars.resources.state.vms | default(vars.resources.state.default) }}"
+  register: arbitary_vms
+  with_subelements: 
+    - "{{ vars.resources.vms }}"
+    - properties
+  when: item[1].role == "arbitary"

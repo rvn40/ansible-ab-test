@@ -1,0 +1,74 @@
+---
+
+
+general:
+  prefix_name: "amarbank"
+  prefix_short: "ab"
+  region_default: "asia-southeast2"
+  wild_world_range: "0.0.0.0/0"
+project:
+  shared_projectID: "amarbank-shared" # Shared Network
+  projectID: "amarbanksre" 
+  authkind: "serviceaccount"
+  serviceaccounts: 
+    - remote_account_name: "amarbank-shared"
+      remote_account_fullname: "amarbank-shared@amarbank.iam.gserviceaccount.com"
+      local_json_directory: "serviceaccounts/"
+      local_json_name: "amarbank-shared.json"
+      local_json_fullpath: "serviceaccounts/amarbank-shared.json"
+    - remote_account_name: "amarbanksre"
+      remote_account_fullname: "amarbanksre@amarbank.iam.gserviceaccount.com"
+      local_json_directory: "serviceaccounts/"
+      local_json_name: "amarbanksre.json"
+      local_json_fullpath: "serviceaccounts/amarbanksre.json"
+users:
+  ssh:
+    - username: "rivan_amarbank"
+      directory: "ssh_keys/"
+      filename: "ssh_login.pem"
+      fullpath: "ssh_keys/ssh_login.pem"
+resources:
+  state:
+    default: "present"
+    firewall: "present"
+    disk: "present"
+    eip: "present"
+    vms: "present"
+  vpc:
+    name: "amarbank-global"
+  subnets:
+    - name: "ab-sre-sea2-snet-01"
+      subnet_range: 10.247.84.0/26
+  vms:
+    - cluster_name: "sre-mongodb-prod-personal-finance"
+      properties:
+        - role: "primary"
+          index: "01"
+          zone: "b"
+          type: "n1-standard-2"
+          private_ip: "10.123.12.11"
+          images: https://www.googleapis.com/compute/v1/projects/centos-cloud/global/images/centos-8-v20200811
+        - role: "arbitary"
+          index: "01"
+          zone: "a"
+          type: "n1-standard-1"
+          private_ip: "10.123.12.14"
+          images: https://www.googleapis.com/compute/v1/projects/centos-cloud/global/images/centos-8-v20200811
+  firewall:
+    - name: "ab-global-internet-webport-allow-rule"
+      protocol: tcp
+      port:   ["80","443"]
+      source_ranges: "0.0.0.0/0"
+      target_tags: "webport-public-rules"
+    - name: "ab-global-internet-ssh-allow-rule"
+      protocol: tcp
+      port: '22'
+      source_ranges: "0.0.0.0/0"
+      target_tags: "ssh-public-rules"      
+    - name: "ab-global-internet-mongodb-allow-rule"
+      protocol: tcp
+      port: '27017'
+      source_ranges: "0.0.0.0/0"
+      target_tags: "mongodb-public-rules"
+
+    
